@@ -35,6 +35,10 @@ def get_house_data(page):
         scaled_value = 1 + (value * (9 - 5))
         print(scaled_value)
         time.sleep(scaled_value)
+    # if you get empty response, stop the loop
+    else:
+        print('empty')
+        break
     
 
 # first while loop that will run 100 times (adjust this to how many pages you want to scrape)
@@ -50,10 +54,5 @@ while count <= 100:
     # collect four and wait random times 
         url = 'https://www.pararius.com/apartments/amsterdam/page-' + str(count)
         get_house_data(url)
-
-        # if you get empty response, stop the loop
-        else:
-            print('empty')
-            break
     
     count += 1
